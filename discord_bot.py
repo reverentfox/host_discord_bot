@@ -7,7 +7,6 @@ from PIL import Image
 import os
 import shutil
 import discord
-from webserver import keep_alive
 
 cwd = os.getcwd()
 client = Client("https://reverent-atlei.hf.space/",hf_token=hf_token_id)
@@ -70,8 +69,6 @@ def run_discord_bot():
         else:
             await send_message(message, user_message, is_private=False)
 
-    
-    keep_alive()
     discord_token = os.environ['DISCORD_TOKEN']
     client.run(discord_token)
 
